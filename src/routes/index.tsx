@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Custom software, web applications, cloud integration, enterprise solutions and data analytics.",
+          "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
     ],
   }),

@@ -81,15 +81,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Intigrityfactor Innovations — IT Solutions in Bangalore" },
+      { title: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
       {
         name: "description",
         content:
-          "Bangalore-based full-service IT company delivering custom software, cloud, and enterprise solutions.",
+          "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
       { name: "author", content: "Intigrityfactor Innovations" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { name: "twitter:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { property: "og:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
+      { name: "twitter:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96573ca6-7838-4519-9984-69fe111eda89/id-preview-a17dca5c--b25dac51-1382-4e7f-bbe5-f7f3d78f9fb7.lovable.app-1785073738297.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96573ca6-7838-4519-9984-69fe111eda89/id-preview-a17dca5c--b25dac51-1382-4e7f-bbe5-f7f3d78f9fb7.lovable.app-1785073738297.png" },
     ],
     links: [
       {
