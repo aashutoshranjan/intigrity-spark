@@ -11,8 +11,18 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
-    // Self-hosted production target: plain Node server at .output/server/index.mjs.
-    // Override with NITRO_PRESET if you ever deploy elsewhere.
+    // Self-hosted production target: a real Node HTTP server that calls serve()
+    // and keeps the process alive. Any other preset (e.g. the cloudflare-module
+    // default) emits a module that only exports a fetch handler, so
+    // `node .output/server/index.mjs` would exit immediately with code 0.
+    // Override with NITRO_PRESET only if you deploy elsewhere.
     preset: process.env.NITRO_PRESET ?? "node-server",
+    // Pin the output layout so `node .output/server/index.mjs` always exists.
+    output: {
+      dir: ".output",
+      serverDir: ".output/server",
+      publicDir: ".output/public",
+    },
   },
 });
+
