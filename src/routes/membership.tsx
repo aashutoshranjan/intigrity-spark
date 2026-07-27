@@ -22,18 +22,14 @@ export const Route = createFileRoute("/membership")({
   component: Membership,
 });
 
-const positions = [
-  "Full-Stack",
-  "Data Analytics",
-  "Cloud Engineering",
-  "QA/Testing",
-  "Others",
-] as const;
-
 const schema = z.object({
   fullName: z.string().trim().min(2, "Full name is required").max(100),
   email: z.string().trim().email("Enter a valid email address").max(255),
-  position: z.enum(positions, { errorMap: () => ({ message: "Select a position" }) }),
+  position: z
+    .string()
+    .trim()
+    .min(2, "Position applying for is required")
+    .max(100, "Position must be 100 characters or less"),
   location: z.string().trim().min(2, "Location is required").max(120),
   startDate: z.string().trim().min(1, "Select a preferred starting date"),
 });
