@@ -22,18 +22,14 @@ export const Route = createFileRoute("/membership")({
   component: Membership,
 });
 
-const positions = [
-  "Full-Stack",
-  "Data Analytics",
-  "Cloud Engineering",
-  "QA/Testing",
-  "Others",
-] as const;
-
 const schema = z.object({
   fullName: z.string().trim().min(2, "Full name is required").max(100),
   email: z.string().trim().email("Enter a valid email address").max(255),
-  position: z.enum(positions, { errorMap: () => ({ message: "Select a position" }) }),
+  position: z
+    .string()
+    .trim()
+    .min(2, "Position applying for is required")
+    .max(100, "Position must be 100 characters or less"),
   location: z.string().trim().min(2, "Location is required").max(120),
   startDate: z.string().trim().min(1, "Select a preferred starting date"),
 });
@@ -94,18 +90,16 @@ function Membership() {
 
           <div className="mt-6">
             <label htmlFor="position" className="text-sm font-medium">
-              Internship Position Applied For
+              Position Applying For
             </label>
-            <select id="position" name="position" defaultValue="" className={field}>
-              <option value="" disabled>
-                Select a position
-              </option>
-              {positions.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
+            <input
+              id="position"
+              name="position"
+              required
+              maxLength={100}
+              className={field}
+              placeholder="Enter the position you are applying for"
+            />
             {errors.position && <p className="mt-1.5 text-xs text-destructive">{errors.position}</p>}
           </div>
 
