@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { MapPin, Mail, MessageCircle, ScanLine } from "lucide-react";
-import qrImage from "@/assets/payment-qr.jpg";
+import { QR_CODE_URL } from "@/lib/site-config";
 import { COMPANY } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/payment")({
