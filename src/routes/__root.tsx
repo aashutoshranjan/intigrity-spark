@@ -94,8 +94,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
       { property: "og:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
       { name: "twitter:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96573ca6-7838-4519-9984-69fe111eda89/id-preview-a17dca5c--b25dac51-1382-4e7f-bbe5-f7f3d78f9fb7.lovable.app-1785073738297.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96573ca6-7838-4519-9984-69fe111eda89/id-preview-a17dca5c--b25dac51-1382-4e7f-bbe5-f7f3d78f9fb7.lovable.app-1785073738297.png" },
+      ...(SITE_URL
+        ? [
+            { property: "og:url", content: SITE_URL },
+            { property: "og:image", content: `${SITE_URL}/og-image.png` },
+            { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
+          ]
+        : []),
     ],
     links: [
       {
