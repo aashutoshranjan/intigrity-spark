@@ -34,6 +34,8 @@ const detailsToShare = [
 ];
 
 function Payment() {
+  const [qrMissing, setQrMissing] = useState(false);
+
   return (
     <section className="relative">
       <div className="absolute inset-0 grid-lines opacity-20" />
@@ -53,15 +55,23 @@ function Payment() {
                 <ScanLine className="size-3.5" /> UPI Payment
               </span>
               <div className="mx-auto mt-7 w-fit rounded-xl bg-primary/10 p-3">
-                <img
-                  src={qrImage}
-                  alt="UPI payment QR code for Intigrityfactor Innovations enrollment fee"
-                  width={768}
-                  height={768}
-                  loading="lazy"
-                  className="size-56 rounded-lg object-cover"
-                />
+                {qrMissing ? (
+                  <div className="flex size-56 items-center justify-center rounded-lg border border-dashed border-primary/40 bg-background/60 px-4 text-center text-sm font-medium text-muted-foreground">
+                    QR Code Not Available
+                  </div>
+                ) : (
+                  <img
+                    src={QR_CODE_URL}
+                    alt="UPI payment QR code for Intigrityfactor Innovations enrollment fee"
+                    width={768}
+                    height={768}
+                    loading="lazy"
+                    onError={() => setQrMissing(true)}
+                    className="size-56 rounded-lg object-cover"
+                  />
+                )}
               </div>
+
               <p className="mt-6 text-sm font-semibold">Intigrityfactor Innovations</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Scan with any UPI app · Enrollment fee as per your Welcome Letter
