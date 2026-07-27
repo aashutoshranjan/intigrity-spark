@@ -132,7 +132,11 @@ All public assets (`qr-code.png`, `favicon.ico`, `robots.txt`) live in `public/`
 
 | Symptom | Fix |
 | --- | --- |
+| `node .output/server/index.mjs` exits immediately with code 0 | The build produced a serverless (fetch-handler) bundle instead of a Node server. Make sure `NITRO_PRESET` is **unset** (or set to `node-server`), delete `.output`/`dist`, and rebuild. The project pins the `node-server` preset in `vite.config.ts`. |
 | `pm2 status` shows `errored` | `pm2 logs intigrityfactor` — usually a missing `npm run build` |
 | 502 Bad Gateway | Node app not running or `PORT` mismatch between `.env` and Nginx `proxy_pass` |
 | Assets 404 | Rebuild (`npm run build`) so `.output/public` is regenerated |
 | Wrong OG/canonical URLs | `VITE_SITE_URL` was not set at build time; set it and rebuild |
+
+A healthy start prints `➜ Listening on: http://0.0.0.0:3020/` and stays in the foreground.
+
