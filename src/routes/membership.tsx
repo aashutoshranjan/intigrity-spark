@@ -90,18 +90,16 @@ function Membership() {
 
           <div className="mt-6">
             <label htmlFor="position" className="text-sm font-medium">
-              Internship Position Applied For
+              Position Applying For
             </label>
-            <select id="position" name="position" defaultValue="" className={field}>
-              <option value="" disabled>
-                Select a position
-              </option>
-              {positions.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
+            <input
+              id="position"
+              name="position"
+              required
+              maxLength={100}
+              className={field}
+              placeholder="Enter the position you are applying for"
+            />
             {errors.position && <p className="mt-1.5 text-xs text-destructive">{errors.position}</p>}
           </div>
 
