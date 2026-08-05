@@ -20,7 +20,7 @@ export const Route = createFileRoute("/offer-letters")({
       },
     ],
   }),
-  component: OfferLetters;
+  component: OfferLetters,
 });
 
 function OfferLetters() {
