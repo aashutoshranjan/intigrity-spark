@@ -1,9 +1,26 @@
-# Offer letter PDFs
+# Offer Letter PDFs
 
-Drop each internship offer letter PDF in this folder using the exact file names
-listed in `src/lib/offer-letters.ts` (for example `offer-letter-01.pdf`).
+One generic offer letter PDF per internship profile / position.
+Personalised letters are sent manually after enrolment.
 
-- Replacing a letter = replacing the file. No code changes needed.
-- To add / rename / relabel entries, edit `src/lib/offer-letters.ts`.
-- Files are served from `/offer-letters/<name>.pdf` and download automatically
-  when a candidate clicks the download button.
+Drop your PDFs in this folder using these exact file names:
+
+- full-stack-development.pdf
+- frontend-development.pdf
+- backend-development.pdf
+- data-analytics.pdf
+- data-science.pdf
+- cloud-engineering.pdf
+- devops-engineering.pdf
+- software-testing.pdf
+- cyber-security.pdf
+- mobile-app-development.pdf
+- ui-ux-design.pdf
+- artificial-intelligence.pdf
+- business-analytics.pdf
+- digital-marketing.pdf
+- human-resources.pdf
+
+Any name missing here simply shows "PDF Not Available" on `/offer-letters`
+until the file is added. To add, rename, or remove a profile, edit
+`src/lib/offer-letters.ts`.
