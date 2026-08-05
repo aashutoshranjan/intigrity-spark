@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PaymentRouteImport } from './routes/payment'
+import { Route as OfferLettersRouteImport } from './routes/offer-letters'
 import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
@@ -31,6 +32,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const PaymentRoute = PaymentRouteImport.update({
   id: '/payment',
   path: '/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfferLettersRoute = OfferLettersRouteImport.update({
+  id: '/offer-letters',
+  path: '/offer-letters',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MembershipRoute = MembershipRouteImport.update({
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/membership': typeof MembershipRoute
+  '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/membership': typeof MembershipRoute
+  '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/membership': typeof MembershipRoute
+  '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/membership'
+    | '/offer-letters'
     | '/payment'
     | '/services'
     | '/sitemap.xml'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/membership'
+    | '/offer-letters'
     | '/payment'
     | '/services'
     | '/sitemap.xml'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/membership'
+    | '/offer-letters'
     | '/payment'
     | '/services'
     | '/sitemap.xml'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   MembershipRoute: typeof MembershipRoute
+  OfferLettersRoute: typeof OfferLettersRoute
   PaymentRoute: typeof PaymentRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/payment'
       fullPath: '/payment'
       preLoaderRoute: typeof PaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offer-letters': {
+      id: '/offer-letters'
+      path: '/offer-letters'
+      fullPath: '/offer-letters'
+      preLoaderRoute: typeof OfferLettersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/membership': {
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   MembershipRoute: MembershipRoute,
+  OfferLettersRoute: OfferLettersRoute,
   PaymentRoute: PaymentRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -208,13 +229,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

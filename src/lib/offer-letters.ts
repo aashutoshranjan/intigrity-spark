@@ -22,7 +22,7 @@ export const OFFER_LETTERS: OfferLetter[] = [
   { id: "offer-letter-06", title: "Offer Letter 06", description: "Data Analytics · Batch B", file: "/offer-letters/offer-letter-06.pdf" },
   { id: "offer-letter-07", title: "Offer Letter 07", description: "Cloud Engineering · Batch A", file: "/offer-letters/offer-letter-07.pdf" },
   { id: "offer-letter-08", title: "Offer Letter 08", description: "Cloud Engineering · Batch A", file: "/offer-letters/offer-letter-08.pdf" },
-  { id: "offer-letter-09", title: "Cloud Engineering · Batch B", description: "Cloud Engineering · Batch B", file: "/offer-letters/offer-letter-09.pdf" },
+  { id: "offer-letter-09", title: "Offer Letter 09", description: "Cloud Engineering · Batch B", file: "/offer-letters/offer-letter-09.pdf" },
   { id: "offer-letter-10", title: "Offer Letter 10", description: "Software Testing · Batch A", file: "/offer-letters/offer-letter-10.pdf" },
   { id: "offer-letter-11", title: "Offer Letter 11", description: "Software Testing · Batch A", file: "/offer-letters/offer-letter-11.pdf" },
   { id: "offer-letter-12", title: "Offer Letter 12", description: "Software Testing · Batch B", file: "/offer-letters/offer-letter-12.pdf" },
