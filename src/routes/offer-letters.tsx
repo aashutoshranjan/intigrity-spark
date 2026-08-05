@@ -52,8 +52,8 @@ function OfferLetters() {
         <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">Documents</p>
         <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Internship Offer Letters</h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Find your offer letter below and click download — the PDF is saved to your device
-          automatically.
+          Select the profile you applied for and click download — the PDF is saved to your device
+          automatically. Your personalised offer letter is shared by our team after enrolment.
         </p>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,7 +64,7 @@ function OfferLetters() {
                 <span className="inline-flex size-11 items-center justify-center rounded-lg bg-primary/12 text-primary">
                   <FileText className="size-5" />
                 </span>
-                <h2 className="mt-4 text-base font-semibold">{letter.title}</h2>
+                <h2 className="mt-4 text-base font-semibold">{letter.position}</h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">{letter.description}</p>
 
                 {unavailable ? (
