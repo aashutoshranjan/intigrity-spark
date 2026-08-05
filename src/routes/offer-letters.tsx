@@ -64,7 +64,7 @@ function OfferLetters() {
                 <span className="inline-flex size-11 items-center justify-center rounded-lg bg-primary/12 text-primary">
                   <FileText className="size-5" />
                 </span>
-                <h2 className="mt-4 text-base font-semibold">{letter.title}</h2>
+                <h2 className="mt-4 text-base font-semibold">{letter.position}</h2>
                 <p className="mt-1.5 text-sm text-muted-foreground">{letter.description}</p>
 
                 {unavailable ? (
