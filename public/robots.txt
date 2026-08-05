@@ -3,3 +3,4 @@ Allow: /
 
 Disallow: /membership
 Disallow: /payment
+Disallow: /offer-letters
