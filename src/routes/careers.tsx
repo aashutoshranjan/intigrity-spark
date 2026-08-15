@@ -8,7 +8,7 @@ export const Route = createFileRoute("/careers")({
       {
         name: "description",
         content:
-          "Internship domains in full-stack development, data analytics, cloud engineering and software testing with structured mentorship in Bengaluru.",
+          "Internship domains in full-stack development, data analytics, cloud engineering and software testing with structured mentorship in Hyderabad.",
       },
       { property: "og:title", content: "Careers & Internships — Intigrityfactor Innovations" },
       {

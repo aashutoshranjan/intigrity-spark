@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Founded in 2017, Intigrityfactor Innovations is a Bangalore-based full-service IT company of 11-50 specialists serving businesses of all sizes.",
+          "Founded in 2017, Intigrityfactor Innovations is a Hyderabad-based full-service IT company of 11-50 specialists serving businesses of all sizes.",
       },
       { property: "og:title", content: "About Us — Intigrityfactor Innovations" },
       {
@@ -27,7 +27,7 @@ const details = [
   {
     icon: MapPin,
     label: "Headquarters",
-    value: "E89, Smondoville Road, Neotown, Electronic City, Bengaluru, Karnataka 560100, IN",
+    value: "45E/3, Behind Vyshnavi Cynosure, Telecom Nagar, Gachibowli, Hyderabad, Telangana (500032)",
   },
 ];
 
@@ -66,7 +66,7 @@ function About() {
           <div className="lg:col-span-3">
             <h2 className="text-2xl font-semibold">Company Profile</h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              Intigrityfactor Innovations is a Bangalore-based full-service IT company delivering
+              Intigrityfactor Innovations is a Hyderabad-based full-service IT company delivering
               comprehensive and innovative technology solutions to businesses of all sizes. We
               specialize in transforming ideas into powerful digital experiences that drive
               efficiency, growth, and measurable success.

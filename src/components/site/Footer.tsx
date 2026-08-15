@@ -5,7 +5,7 @@ export const COMPANY = {
   email: "support@intigrityfactor.com",
   whatsapp: "+91 92622 92190",
   whatsappHref: "https://wa.me/919262292190",
-  address: "E89, Smondoville Road, Neotown, Electronic City, Bengaluru, Karnataka 560100, IN",
+  address: "45E/3, Behind Vyshnavi Cynosure, Telecom Nagar, Gachibowli, Hyderabad, Telangana (500032)",
 };
 
 export function Footer() {
@@ -22,7 +22,7 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-            Bangalore-based full-service IT company delivering comprehensive, scalable, and secure
+            Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure
             technology solutions to businesses of all sizes.
           </p>
         </div>
@@ -72,7 +72,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© {new Date().getFullYear()} Intigrityfactor Innovations. All rights reserved.</p>
-          <p>IT System Custom Software Development · Founded 2017 · Bengaluru, India</p>
+          <p>IT System Custom Software Development · Founded 2017 · Hyderabad, India</p>
         </div>
       </div>
     </footer>

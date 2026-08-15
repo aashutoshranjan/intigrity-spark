@@ -12,12 +12,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Intigrityfactor Innovations in Electronic City, Bengaluru by email, WhatsApp or the enquiry form.",
+          "Contact Intigrityfactor Innovations in Gachibowli, Hyderabad by email, WhatsApp or the enquiry form.",
       },
       { property: "og:title", content: "Contact — Intigrityfactor Innovations" },
       {
         property: "og:description",
-        content: "Reach our Bengaluru team for project enquiries and support.",
+        content: "Reach our Hyderabad team for project enquiries and support.",
       },
     ],
   }),
@@ -32,7 +32,7 @@ const schema = z.object({
 });
 
 const MAPS_QUERY = encodeURIComponent(
-  "E89, Smondoville Road, Neotown, Electronic City, Bengaluru, Karnataka 560100",
+  "45E/3, Behind Vyshnavi Cynosure, Telecom Nagar, Gachibowli, Hyderabad, Telangana (500032)",
 );
 
 function Contact() {
