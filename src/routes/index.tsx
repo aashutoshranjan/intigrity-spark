@@ -119,7 +119,7 @@ function Home() {
               Explore Services <ArrowRight className="size-4" />
             </Link>
             <Link
-              to="/membership"
+              to="/form"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface/70 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/50"
             >
               Join Our Program

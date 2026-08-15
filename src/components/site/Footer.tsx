@@ -3,8 +3,8 @@ import { Mail, MessageCircle, MapPin, Hexagon } from "lucide-react";
 
 export const COMPANY = {
   email: "support@intigrityfactor.com",
-  whatsapp: "+91 92882 36779",
-  whatsappHref: "https://wa.me/919288236779",
+  whatsapp: "+91 92622 92190",
+  whatsappHref: "https://wa.me/919262292190",
   address: "E89, Smondoville Road, Neotown, Electronic City, Bengaluru, Karnataka 560100, IN",
 };
 
