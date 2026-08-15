@@ -3,7 +3,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/membership")({
+export const Route = createFileRoute("/form")({
   head: () => ({
     meta: [
       { title: "Internship Enrollment Form — Intigrityfactor Innovations" },
@@ -34,7 +34,7 @@ const schema = z.object({
   startDate: z.string().trim().min(1, "Select a preferred starting date"),
 });
 
-function Membership() {
+function Form() {
   const navigate = useNavigate();
   const [errors, setErrors] = useState<Record<string, string>>({});
 
