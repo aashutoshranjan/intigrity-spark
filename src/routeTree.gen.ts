@@ -13,7 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PaymentRouteImport } from './routes/payment'
 import { Route as OfferLettersRouteImport } from './routes/offer-letters'
-import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as FormRouteImport } from './routes/form'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
@@ -39,9 +39,9 @@ const OfferLettersRoute = OfferLettersRouteImport.update({
   path: '/offer-letters',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MembershipRoute = MembershipRouteImport.update({
-  id: '/membership',
-  path: '/membership',
+const FormRoute = FormRouteImport.update({
+  id: '/form',
+  path: '/form',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -70,7 +70,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/membership': typeof MembershipRoute
+  '/form': typeof FormRoute
   '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
@@ -81,7 +81,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/membership': typeof MembershipRoute
+  '/form': typeof FormRoute
   '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
@@ -93,7 +93,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
-  '/membership': typeof MembershipRoute
+  '/form': typeof FormRoute
   '/offer-letters': typeof OfferLettersRoute
   '/payment': typeof PaymentRoute
   '/services': typeof ServicesRoute
@@ -106,7 +106,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/membership'
+    | '/form'
     | '/offer-letters'
     | '/payment'
     | '/services'
@@ -117,7 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/membership'
+    | '/form'
     | '/offer-letters'
     | '/payment'
     | '/services'
@@ -128,7 +128,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
-    | '/membership'
+    | '/form'
     | '/offer-letters'
     | '/payment'
     | '/services'
@@ -140,7 +140,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
-  MembershipRoute: typeof MembershipRoute
+  FormRoute: typeof FormRoute
   OfferLettersRoute: typeof OfferLettersRoute
   PaymentRoute: typeof PaymentRoute
   ServicesRoute: typeof ServicesRoute
@@ -177,11 +177,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfferLettersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/membership': {
-      id: '/membership'
-      path: '/membership'
-      fullPath: '/membership'
-      preLoaderRoute: typeof MembershipRouteImport
+    '/form': {
+      id: '/form'
+      path: '/form'
+      fullPath: '/form'
+      preLoaderRoute: typeof FormRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -220,7 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
-  MembershipRoute: MembershipRoute,
+  FormRoute: FormRoute,
   OfferLettersRoute: OfferLettersRoute,
   PaymentRoute: PaymentRoute,
   ServicesRoute: ServicesRoute,
@@ -229,3 +229,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

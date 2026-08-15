@@ -77,7 +77,7 @@ function Careers() {
             mentors, structured reviews and clear outcomes.
           </p>
           <Link
-            to="/membership"
+            to="/form"
             className="mt-9 inline-flex items-center gap-2 rounded-lg bg-accent-gradient px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-opacity hover:opacity-90"
           >
             Apply / Enroll for Internship <ArrowRight className="size-4" />
@@ -122,7 +122,7 @@ function Careers() {
               </p>
             </div>
             <Link
-              to="/membership"
+              to="/form"
               className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent-gradient px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               Apply / Enroll for Internship <ArrowRight className="size-4" />

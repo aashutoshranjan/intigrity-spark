@@ -40,6 +40,45 @@
 :root {
   --radius: 0.75rem;
 
+  /* Light theme — clean, professional, white surfaces (default) */
+  --background: oklch(0.99 0.004 250);
+  --foreground: oklch(0.24 0.035 258);
+  --surface: oklch(0.965 0.008 250);
+  --surface-elevated: oklch(0.985 0.005 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.035 258);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.035 258);
+
+  --primary: oklch(0.55 0.13 205);
+  --primary-foreground: oklch(0.99 0.005 250);
+  --glow: oklch(0.48 0.16 232);
+
+  --secondary: oklch(0.96 0.008 250);
+  --secondary-foreground: oklch(0.26 0.035 258);
+  --muted: oklch(0.96 0.008 250);
+  --muted-foreground: oklch(0.48 0.02 258);
+  --accent: oklch(0.5 0.16 232);
+  --accent-foreground: oklch(0.99 0.005 250);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 250);
+  --border: oklch(0.9 0.008 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: oklch(0.55 0.13 205);
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.99 0.004 250) 0%,
+    oklch(0.97 0.012 250) 55%,
+    oklch(0.95 0.02 232) 100%
+  );
+  --gradient-accent: linear-gradient(100deg, var(--primary), var(--glow));
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 18%, transparent),
+    0 18px 50px -24px color-mix(in oklab, var(--primary) 40%, transparent);
+  --shadow-card: 0 24px 60px -34px oklch(0.2 0.03 258 / 0.18);
+}
+
+.dark {
   /* Deep slate / navy dark aesthetic */
   --background: oklch(0.19 0.031 258);
   --foreground: oklch(0.96 0.008 250);

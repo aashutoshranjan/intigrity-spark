@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /membership
+Disallow: /form
 Disallow: /payment
 Disallow: /offer-letters
