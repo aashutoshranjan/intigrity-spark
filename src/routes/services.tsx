@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "IT Services — Intigrityfactor Innovations" },
       {
         property: "og:description",
-        content: "End-to-end IT capabilities from a Bangalore-based full-service technology partner.",
+        content: "End-to-end IT capabilities from a Hyderabad-based full-service technology partner.",
       },
     ],
   }),

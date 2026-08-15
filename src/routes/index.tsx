@@ -19,13 +19,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
+          "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
       { property: "og:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
       {
         property: "og:description",
         content:
-          "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
+          "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
     ],
   }),
@@ -102,13 +102,13 @@ function Home() {
 
         <div className="relative mx-auto max-w-7xl px-5 py-28 lg:px-8 lg:py-40">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 text-xs font-medium tracking-wide text-primary">
-            Bengaluru · Since 2017
+            Hyderabad · Since 2017
           </span>
           <h1 className="mt-6 max-w-4xl text-4xl leading-[1.08] font-semibold sm:text-5xl lg:text-6xl">
             Transforming Ideas into <span className="text-gradient">Powerful Digital Experiences.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Bangalore-based full-service IT company delivering comprehensive, scalable, and secure
+            Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure
             technology solutions.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">

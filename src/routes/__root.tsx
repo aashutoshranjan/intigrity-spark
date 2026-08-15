@@ -86,15 +86,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
+          "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
       { name: "author", content: "Intigrityfactor Innovations" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
       { name: "twitter:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
-      { property: "og:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
-      { name: "twitter:description", content: "Bangalore-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
+      { property: "og:description", content: "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
+      { name: "twitter:description", content: "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
       ...(SITE_URL
         ? [
             { property: "og:url", content: SITE_URL },
