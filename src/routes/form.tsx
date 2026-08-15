@@ -19,7 +19,7 @@ export const Route = createFileRoute("/form")({
       },
     ],
   }),
-  component: Membership,
+  component: Form,
 });
 
 const schema = z.object({
