@@ -3,7 +3,7 @@
 module.exports = {
   apps: [
     {
-      name: "intigrityfactor",
+      name: "intigrity-factor-systems",
       script: ".output/server/index.mjs",
       cwd: __dirname,
       exec_mode: "fork",
