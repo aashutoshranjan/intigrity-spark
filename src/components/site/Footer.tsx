@@ -18,7 +18,7 @@ export function Footer() {
               <Hexagon className="size-5" strokeWidth={2.4} />
             </span>
             <span className="font-display text-base font-semibold">
-              Integrity Factor <span className="text-primary">Systems</span>
+              Intigrity Factor <span className="text-primary">Systems</span>
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">

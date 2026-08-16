@@ -175,7 +175,7 @@ function Home() {
       {/* Why choose us */}
       <section className="border-t border-border bg-surface/30">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Why choose Integrity Factor</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Why choose Intigrity Factor</h2>
           <div className="mt-12 grid gap-10 lg:grid-cols-3">
             {why.map((w) => (
               <div key={w.title} className="border-l-2 border-primary/40 pl-6">

@@ -22,7 +22,7 @@ export function Navbar() {
             <Hexagon className="size-5" strokeWidth={2.4} />
           </span>
           <span className="font-display text-[0.95rem] font-semibold tracking-tight">
-            Integrity Factor <span className="text-primary">Systems</span>
+            Intigrity Factor <span className="text-primary">Systems</span>
           </span>
         </Link>
 

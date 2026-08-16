@@ -13,7 +13,7 @@ export const Route = createFileRoute("/careers")({
       { property: "og:title", content: "Careers & Internships — Intigrity Factor Systems" },
       {
         property: "og:description",
-        content: "Grow with mentorship, real projects and structured learning at Integrity Factor.",
+        content: "Grow with mentorship, real projects and structured learning at Intigrity Factor.",
       },
     ],
   }),

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/form")({
       { title: "Internship Enrollment Form — Intigrity Factor Systems" },
       {
         name: "description",
-        content: "Fill in your details to proceed with your Integrity Factor internship enrollment.",
+        content: "Fill in your details to proceed with your Intigrity Factor internship enrollment.",
       },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Internship Enrollment Form — Intigrity Factor Systems" },
