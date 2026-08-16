@@ -8,13 +8,13 @@ import { COMPANY } from "@/components/site/Footer";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Intigrityfactor Innovations" },
+      { title: "Contact — Intigrity Factor Systems" },
       {
         name: "description",
         content:
-          "Contact Intigrityfactor Innovations in Gachibowli, Hyderabad by email, WhatsApp or the enquiry form.",
+          "Contact Intigrity Factor Systems in Gachibowli, Hyderabad by email, WhatsApp or the enquiry form.",
       },
-      { property: "og:title", content: "Contact — Intigrityfactor Innovations" },
+      { property: "og:title", content: "Contact — Intigrity Factor Systems" },
       {
         property: "og:description",
         content: "Reach our Hyderabad team for project enquiries and support.",
@@ -167,7 +167,7 @@ function Contact() {
 
             <div className="card-surface overflow-hidden">
               <iframe
-                title="Intigrityfactor Innovations office location"
+                title="Intigrity Factor Systems office location"
                 src={`https://www.google.com/maps?q=${MAPS_QUERY}&output=embed`}
                 className="h-64 w-full border-0"
                 loading="lazy"

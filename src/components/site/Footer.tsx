@@ -18,7 +18,7 @@ export function Footer() {
               <Hexagon className="size-5" strokeWidth={2.4} />
             </span>
             <span className="font-display text-base font-semibold">
-              Intigrityfactor <span className="text-primary">Innovations</span>
+              Intigrity Factor <span className="text-primary">Systems</span>
             </span>
           </div>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -71,7 +71,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <p>© {new Date().getFullYear()} Intigrityfactor Innovations. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Intigrity Factor Systems. All rights reserved.</p>
           <p>IT System Custom Software Development · Founded 2017 · Hyderabad, India</p>
         </div>
       </div>

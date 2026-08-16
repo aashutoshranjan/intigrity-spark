@@ -15,13 +15,13 @@ import heroImage from "@/assets/hero-network.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { title: "Intigrity Factor Systems — Digital Experiences, Engineered" },
       {
         name: "description",
         content:
           "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
-      { property: "og:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { property: "og:title", content: "Intigrity Factor Systems — Digital Experiences, Engineered" },
       {
         property: "og:description",
         content:
@@ -175,7 +175,7 @@ function Home() {
       {/* Why choose us */}
       <section className="border-t border-border bg-surface/30">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Why choose Intigrityfactor</h2>
+          <h2 className="text-3xl font-semibold sm:text-4xl">Why choose Intigrity Factor</h2>
           <div className="mt-12 grid gap-10 lg:grid-cols-3">
             {why.map((w) => (
               <div key={w.title} className="border-l-2 border-primary/40 pl-6">

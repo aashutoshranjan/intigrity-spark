@@ -4,13 +4,13 @@ import { ArrowRight, Code2, Layers, Cloud, BarChart3, ShieldCheck } from "lucide
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "IT Services — Intigrityfactor Innovations" },
+      { title: "IT Services — Intigrity Factor Systems" },
       {
         name: "description",
         content:
           "Custom software development, web & enterprise applications, cloud systems, data analytics and managed IT security services.",
       },
-      { property: "og:title", content: "IT Services — Intigrityfactor Innovations" },
+      { property: "og:title", content: "IT Services — Intigrity Factor Systems" },
       {
         property: "og:description",
         content: "End-to-end IT capabilities from a Hyderabad-based full-service technology partner.",

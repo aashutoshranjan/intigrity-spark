@@ -4,16 +4,16 @@ import { ArrowRight, GraduationCap, Users, Sparkles, Code2, BarChart3, Cloud, Bu
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers & Internships — Intigrityfactor Innovations" },
+      { title: "Careers & Internships — Intigrity Factor Systems" },
       {
         name: "description",
         content:
           "Internship domains in full-stack development, data analytics, cloud engineering and software testing with structured mentorship in Hyderabad.",
       },
-      { property: "og:title", content: "Careers & Internships — Intigrityfactor Innovations" },
+      { property: "og:title", content: "Careers & Internships — Intigrity Factor Systems" },
       {
         property: "og:description",
-        content: "Grow with mentorship, real projects and structured learning at Intigrityfactor.",
+        content: "Grow with mentorship, real projects and structured learning at Intigrity Factor.",
       },
     ],
   }),

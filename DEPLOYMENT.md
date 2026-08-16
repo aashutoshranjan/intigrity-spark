@@ -24,8 +24,8 @@ sudo npm install -g pm2
 
 ```bash
 sudo mkdir -p /var/www && cd /var/www
-git clone <your-repo-url> intigrityfactor
-cd intigrityfactor
+git clone <your-repo-url> intigrity-factor-systems
+cd intigrity-factor-systems
 ```
 
 ## 3. Environment variables
@@ -62,7 +62,7 @@ pm2 start ecosystem.config.cjs
 pm2 save
 pm2 startup      # run the printed command to enable boot persistence
 pm2 status
-pm2 logs intigrityfactor
+pm2 logs intigrity-factor-systems
 ```
 
 Verify locally:
@@ -74,9 +74,9 @@ curl -I http://127.0.0.1:3020
 ## 6. Nginx reverse proxy
 
 ```bash
-sudo cp nginx.conf.example /etc/nginx/sites-available/intigrityfactor
-sudo nano /etc/nginx/sites-available/intigrityfactor   # replace yourdomain.com
-sudo ln -s /etc/nginx/sites-available/intigrityfactor /etc/nginx/sites-enabled/
+sudo cp nginx.conf.example /etc/nginx/sites-available/intigrity-factor-systems
+sudo nano /etc/nginx/sites-available/intigrity-factor-systems   # replace yourdomain.com
+sudo ln -s /etc/nginx/sites-available/intigrity-factor-systems /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
 ```
@@ -104,11 +104,11 @@ sudo ufw enable
 ## Updating the app
 
 ```bash
-cd /var/www/intigrityfactor
+cd /var/www/intigrity-factor-systems
 git pull
 npm install
 npm run build
-pm2 restart intigrityfactor
+pm2 restart intigrity-factor-systems
 ```
 
 ## Replacing the payment QR code
@@ -116,8 +116,8 @@ pm2 restart intigrityfactor
 Replace the image file — **no code changes needed**:
 
 ```bash
-cp /path/to/new-qr.png /var/www/intigrityfactor/public/qr-code.png
-npm run build && pm2 restart intigrityfactor
+cp /path/to/new-qr.png /var/www/intigrity-factor-systems/public/qr-code.png
+npm run build && pm2 restart intigrity-factor-systems
 ```
 
 If the file is missing, the payment page shows a **“QR Code Not Available”** placeholder in the
@@ -133,7 +133,7 @@ All public assets (`qr-code.png`, `favicon.ico`, `robots.txt`) live in `public/`
 | Symptom | Fix |
 | --- | --- |
 | `node .output/server/index.mjs` exits immediately with code 0 | The build produced a serverless (fetch-handler) bundle instead of a Node server. Make sure `NITRO_PRESET` is **unset** (or set to `node-server`), delete `.output`/`dist`, and rebuild. The project pins the `node-server` preset in `vite.config.ts`. |
-| `pm2 status` shows `errored` | `pm2 logs intigrityfactor` — usually a missing `npm run build` |
+| `pm2 status` shows `errored` | `pm2 logs intigrity-factor-systems` — usually a missing `npm run build` |
 | 502 Bad Gateway | Node app not running or `PORT` mismatch between `.env` and Nginx `proxy_pass` |
 | Assets 404 | Rebuild (`npm run build`) so `.output/public` is regenerated |
 | Wrong OG/canonical URLs | `VITE_SITE_URL` was not set at build time; set it and rebuild |

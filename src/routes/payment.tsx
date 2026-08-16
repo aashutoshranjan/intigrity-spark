@@ -7,13 +7,13 @@ import { COMPANY } from "@/components/site/Footer";
 export const Route = createFileRoute("/payment")({
   head: () => ({
     meta: [
-      { title: "Payment Confirmation — Intigrityfactor Innovations" },
+      { title: "Payment Confirmation — Intigrity Factor Systems" },
       {
         name: "description",
         content: "Complete your internship enrollment payment and share the required confirmation details.",
       },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Payment Confirmation — Intigrityfactor Innovations" },
+      { property: "og:title", content: "Payment Confirmation — Intigrity Factor Systems" },
       {
         property: "og:description",
         content: "UPI payment and enrollment confirmation instructions.",
@@ -62,7 +62,7 @@ function Payment() {
                 ) : (
                   <img
                     src={QR_CODE_URL}
-                    alt="UPI payment QR code for Intigrityfactor Innovations enrollment fee"
+                    alt="UPI payment QR code for Intigrity Factor Systems enrollment fee"
                     width={768}
                     height={768}
                     loading="lazy"
@@ -72,7 +72,7 @@ function Payment() {
                 )}
               </div>
 
-              <p className="mt-6 text-sm font-semibold">Intigrityfactor Innovations</p>
+              <p className="mt-6 text-sm font-semibold">Intigrity Factor Systems</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Scan with any UPI app · Enrollment fee as per your Welcome Letter
               </p>

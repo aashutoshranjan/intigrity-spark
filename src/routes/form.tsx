@@ -6,16 +6,16 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/form")({
   head: () => ({
     meta: [
-      { title: "Internship Enrollment Form — Intigrityfactor Innovations" },
+      { title: "Internship Enrollment Form — Intigrity Factor Systems" },
       {
         name: "description",
-        content: "Fill in your details to proceed with your Intigrityfactor internship enrollment.",
+        content: "Fill in your details to proceed with your Intigrity Factor internship enrollment.",
       },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Internship Enrollment Form — Intigrityfactor Innovations" },
+      { property: "og:title", content: "Internship Enrollment Form — Intigrity Factor Systems" },
       {
         property: "og:description",
-        content: "Enrollment form for the Intigrityfactor Innovations internship program.",
+        content: "Enrollment form for the Intigrity Factor Systems internship program.",
       },
     ],
   }),

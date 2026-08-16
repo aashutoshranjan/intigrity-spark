@@ -4,13 +4,13 @@ import { Building2, Users, CalendarDays, MapPin, Lightbulb, Target, TrendingUp }
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Intigrityfactor Innovations" },
+      { title: "About Us — Intigrity Factor Systems" },
       {
         name: "description",
         content:
-          "Founded in 2017, Intigrityfactor Innovations is a Hyderabad-based full-service IT company of 11-50 specialists serving businesses of all sizes.",
+          "Founded in 2017, Intigrity Factor Systems is a Hyderabad-based full-service IT company of 11-50 specialists serving businesses of all sizes.",
       },
-      { property: "og:title", content: "About Us — Intigrityfactor Innovations" },
+      { property: "og:title", content: "About Us — Intigrity Factor Systems" },
       {
         property: "og:description",
         content: "Company profile, headquarters details, vision and values.",
@@ -66,7 +66,7 @@ function About() {
           <div className="lg:col-span-3">
             <h2 className="text-2xl font-semibold">Company Profile</h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              Intigrityfactor Innovations is a Hyderabad-based full-service IT company delivering
+              Intigrity Factor Systems is a Hyderabad-based full-service IT company delivering
               comprehensive and innovative technology solutions to businesses of all sizes. We
               specialize in transforming ideas into powerful digital experiences that drive
               efficiency, growth, and measurable success.
