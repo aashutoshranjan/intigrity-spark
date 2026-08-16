@@ -82,17 +82,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { title: "Intigrity Factor Systems — Digital Experiences, Engineered" },
       {
         name: "description",
         content:
           "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017.",
       },
-      { name: "author", content: "Intigrityfactor Innovations" },
+      { name: "author", content: "Intigrity Factor Systems" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
-      { name: "twitter:title", content: "Intigrityfactor Innovations — Digital Experiences, Engineered" },
+      { property: "og:title", content: "Intigrity Factor Systems — Digital Experiences, Engineered" },
+      { name: "twitter:title", content: "Intigrity Factor Systems — Digital Experiences, Engineered" },
       { property: "og:description", content: "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
       { name: "twitter:description", content: "Hyderabad-based full-service IT company delivering comprehensive, scalable, and secure technology solutions since 2017." },
       ...(SITE_URL

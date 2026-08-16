@@ -6,14 +6,14 @@ import { OFFER_LETTERS } from "@/lib/offer-letters";
 export const Route = createFileRoute("/offer-letters")({
   head: () => ({
     meta: [
-      { title: "Internship Offer Letters — Intigrityfactor Innovations" },
+      { title: "Internship Offer Letters — Intigrity Factor Systems" },
       {
         name: "description",
         content:
-          "Download your Intigrityfactor Innovations internship offer letter as a PDF document.",
+          "Download your Intigrity Factor Systems internship offer letter as a PDF document.",
       },
       { name: "robots", content: "noindex" },
-      { property: "og:title", content: "Internship Offer Letters — Intigrityfactor Innovations" },
+      { property: "og:title", content: "Internship Offer Letters — Intigrity Factor Systems" },
       {
         property: "og:description",
         content: "Secure download area for internship offer letter PDFs.",

@@ -1,4 +1,4 @@
-# Sample Nginx reverse-proxy config for Intigrityfactor Innovations
+# Sample Nginx reverse-proxy config for Intigrity Factor Systems
 # Place at /etc/nginx/sites-available/intigrityfactor and symlink into sites-enabled.
 # Replace yourdomain.com with your real domain.
 
