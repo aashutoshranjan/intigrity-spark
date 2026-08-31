@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MessageCircle, MapPin, Hexagon } from "lucide-react";
 
 export const COMPANY = {
-  email: "support@intigrityfactor.com",
+  email: "support@intigrityfactor.in",
   whatsapp: "+91 92622 92190",
   whatsappHref: "https://wa.me/919262292190",
   address: "45E/3, Behind Vyshnavi Cynosure, Telecom Nagar, Gachibowli, Hyderabad, Telangana (500032)",

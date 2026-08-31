@@ -38,8 +38,8 @@ nano .env
 ```env
 PORT=3020
 HOST=0.0.0.0
-SITE_URL=https://yourdomain.com
-VITE_SITE_URL=https://yourdomain.com
+SITE_URL=https://intigrityfactor.in
+VITE_SITE_URL=https://intigrityfactor.in
 ```
 
 `VITE_SITE_URL` is baked into the client bundle at build time — set it **before** building.
@@ -75,7 +75,6 @@ curl -I http://127.0.0.1:3020
 
 ```bash
 sudo cp nginx.conf.example /etc/nginx/sites-available/intigrity-factor-systems
-sudo nano /etc/nginx/sites-available/intigrity-factor-systems   # replace yourdomain.com
 sudo ln -s /etc/nginx/sites-available/intigrity-factor-systems /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
@@ -83,11 +82,11 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ## 7. DNS + SSL (Let's Encrypt)
 
-Point an `A` record for `yourdomain.com` and `www` at your VPS IP, then:
+Point an `A` record for `intigrityfactor.in` and `www.intigrityfactor.in` at your VPS IP, then:
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+sudo certbot --nginx -d intigrityfactor.in -d www.intigrityfactor.in
 sudo systemctl status certbot.timer   # auto-renewal
 ```
 
