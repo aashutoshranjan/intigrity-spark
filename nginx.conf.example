@@ -1,11 +1,10 @@
-# Sample Nginx reverse-proxy config for Intigrity Factor Systems
+# Nginx reverse-proxy config for Intigrity Factor Systems
 # Place at /etc/nginx/sites-available/intigrity-factor-systems and symlink into sites-enabled.
-# Replace yourdomain.com with your real domain.
 
 server {
     listen 80;
     listen [::]:80;
-    server_name yourdomain.com www.yourdomain.com;
+    server_name intigrityfactor.in www.intigrityfactor.in;
 
     # Certbot will add the HTTPS server block and the redirect automatically.
     location / {
