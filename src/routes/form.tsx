@@ -64,7 +64,17 @@ function Form() {
           Fill in your details below to proceed with your enrollment.
         </p>
 
-        <form onSubmit={handleSubmit} noValidate className="card-surface mt-10 p-8">
+        <div className="mt-6 rounded-xl border border-primary/30 bg-primary/[0.07] p-5 text-sm leading-relaxed">
+          <p className="font-semibold text-primary">Complete your enrolment and confirm your seat ASAP.</p>
+          <p className="mt-2 text-muted-foreground">Limited seats are available.</p>
+          <p className="mt-3 text-muted-foreground">
+            To confirm your seat, a one-time enrollment fee which is mentioned in the Internship Offer Letter.
+            This amount is fully refundable and will be returned along with your internship stipend.
+            The fee covers training support, materials, and project access during the internship.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} noValidate className="card-surface mt-8 p-8">
           <div>
             <label htmlFor="fullName" className="text-sm font-medium">
               Full Name
