@@ -1,8 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Mail, MessageCircle, ScanLine } from "lucide-react";
+import {
+  AlertTriangle,
+  Check,
+  Clipboard,
+  Clock3,
+  Mail,
+  MapPin,
+  MessageCircle,
+  ScanLine,
+  ShieldCheck,
+} from "lucide-react";
 import { QR_CODE_URL } from "@/lib/site-config";
 import { COMPANY } from "@/components/site/Footer";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/payment")({
   head: () => ({
@@ -18,6 +29,8 @@ export const Route = createFileRoute("/payment")({
         property: "og:description",
         content: "UPI payment and enrollment confirmation instructions.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Payment,
@@ -30,33 +43,81 @@ const detailsToShare = [
   "Contact Number",
   "Internship Position Applied For",
   "Cohort Date",
-  "Batch Code (Mentioned in Offer Letter)",
+  "Batch Code (Mentioned in welcome letter)",
 ];
+
+const PAYMENT_AMOUNT = "₹1,599";
+const UPI_ID = "paytm.s11ah8u@pta";
+const PAYMENT_EMAIL = "support@enerzcloud.com";
+const PAYMENT_WHATSAPP = "+917209493680";
+const PAYMENT_WHATSAPP_HREF = "https://wa.me/917209493680";
 
 function Payment() {
   const [qrMissing, setQrMissing] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  async function copyUpiId() {
+    try {
+      await navigator.clipboard.writeText(UPI_ID);
+    } catch {
+      const textArea = document.createElement("textarea");
+      textArea.value = UPI_ID;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      textArea.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2500);
+  }
 
   return (
     <section className="relative">
       <div className="absolute inset-0 grid-lines opacity-20" />
-      <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-20">
         <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">Enrollment</p>
-        <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Complete Your Payment</h1>
+        <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Scan QR to Pay</h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Scan the UPI QR code to pay your internship enrollment fee, then share your confirmation
-          details with our support team.
+          Complete your enrollment payment securely, then share the required confirmation details
+          with our support team.
         </p>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-5">
+        <div className="mt-8 grid items-start gap-8 lg:grid-cols-5">
           {/* QR card */}
           <div className="lg:col-span-2">
-            <div className="card-surface sticky top-24 p-8 text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary">
-                <ScanLine className="size-3.5" /> UPI Payment
-              </span>
-              <div className="mx-auto mt-7 w-fit rounded-xl bg-primary/10 p-3">
+            <div className="card-static overflow-hidden">
+              <div className="border-b border-border bg-primary/[0.07] px-5 py-5 text-center sm:px-7">
+                <p className="text-xs font-semibold uppercase text-muted-foreground">Payment Amount</p>
+                <p className="mt-1 font-display text-3xl font-semibold text-primary">{PAYMENT_AMOUNT}</p>
+              </div>
+
+              <div className="m-4 rounded-lg border border-gold/40 bg-gold/10 p-4 text-left sm:m-6">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="mt-0.5 size-5 shrink-0 text-gold" />
+                  <div className="min-w-0">
+                    <h2 className="text-sm font-semibold">IMPORTANT PAYMENT INSTRUCTION</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      Please do <strong className="text-foreground">not</strong> take a screenshot of
+                      this QR code or use “Pay from Gallery” to scan it.
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      If you are paying from a mobile phone, open this page on a laptop, desktop, or
+                      another mobile phone and scan the QR using your UPI app. This helps avoid payment
+                      delays or Pending status.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 pb-6 text-center sm:px-7 sm:pb-8">
+                <div className="inline-flex items-center gap-2 text-base font-semibold">
+                  <ScanLine className="size-5 text-primary" /> Scan QR to Pay
+                </div>
+                <div className="mx-auto mt-4 w-fit rounded-lg border border-border bg-background p-2.5 shadow-sm">
                 {qrMissing ? (
-                  <div className="flex size-56 items-center justify-center rounded-lg border border-dashed border-primary/40 bg-background/60 px-4 text-center text-sm font-medium text-muted-foreground">
+                  <div className="flex size-64 max-w-full items-center justify-center rounded-md border border-dashed border-primary/40 bg-background px-4 text-center text-sm font-medium text-muted-foreground">
                     QR Code Not Available
                   </div>
                 ) : (
@@ -67,59 +128,100 @@ function Payment() {
                     height={768}
                     loading="lazy"
                     onError={() => setQrMissing(true)}
-                    className="size-56 rounded-lg object-cover"
+                    className="size-64 max-w-full rounded-md object-contain"
                   />
                 )}
-              </div>
+                </div>
+                <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                  PhonePe • Google Pay • Paytm • BHIM • Other UPI Apps
+                </p>
 
-              <p className="mt-6 text-sm font-semibold">Intigrity Factor Systems</p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                Scan with any UPI app · Enrollment fee as per your Welcome Letter
-              </p>
+                <div className="my-6 flex items-center gap-3" aria-hidden="true">
+                  <span className="h-px flex-1 bg-border" />
+                  <span className="text-xs font-semibold text-muted-foreground">OR</span>
+                  <span className="h-px flex-1 bg-border" />
+                </div>
 
-              <div className="mt-7 space-y-3 border-t border-border pt-6 text-left text-sm">
-                <a href={`mailto:${COMPANY.email}`} className="flex gap-2.5 hover:text-primary">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-primary" />
-                  {COMPANY.email}
-                </a>
-                <a href={COMPANY.whatsappHref} className="flex gap-2.5 hover:text-primary">
-                  <MessageCircle className="mt-0.5 size-4 shrink-0 text-primary" />
-                  WhatsApp {COMPANY.whatsapp}
-                </a>
+                <h2 className="text-base font-semibold">Pay Using UPI ID</h2>
+                <div className="mt-3 rounded-lg border border-border bg-surface p-3">
+                  <code className="block select-all break-all text-sm font-semibold text-foreground">{UPI_ID}</code>
+                </div>
+                <Button type="button" size="lg" onClick={copyUpiId} className="mt-3 min-h-11 w-full">
+                  {copied ? <Check /> : <Clipboard />}
+                  {copied ? "UPI ID copied ✓" : "Copy UPI ID"}
+                </Button>
+                <p className="mt-4 text-left text-xs leading-relaxed text-muted-foreground">
+                  Open your UPI app → select Pay/Send Money → paste the UPI ID → enter the exact
+                  payment amount → verify the recipient name → complete the payment.
+                </p>
               </div>
             </div>
           </div>
 
           {/* Instructions */}
-          <div className="lg:col-span-3">
-            <article className="card-surface p-8">
-              <h2 className="text-xl font-semibold">Important Notice – Enrollment Confirmation</h2>
+          <div className="min-w-0 space-y-5 lg:col-span-3">
+            <aside className="rounded-lg border border-primary/30 bg-primary/[0.07] p-5">
+              <div className="flex items-start gap-3">
+                <ShieldCheck className="mt-0.5 size-5 shrink-0 text-primary" />
+                <div className="min-w-0">
+                  <h2 className="text-base font-semibold">Verify the recipient name</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Before completing payment, please verify the recipient name displayed in your UPI app.
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Depending on the UPI app, the payment screen may display
+                    <strong className="text-foreground"> ENERZCLOUD INNOVATIONS</strong> or the name of an
+                    authorized person associated with our business. Both are valid.
+                  </p>
+                </div>
+              </div>
+            </aside>
+
+            <aside className="rounded-lg border border-gold/40 bg-gold/10 p-5">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="mt-0.5 size-5 shrink-0 text-gold" />
+                <div className="min-w-0">
+                  <h2 className="text-base font-semibold">PAYMENT SHOWING “PENDING”?</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Please <strong className="text-foreground">do not make another payment</strong> if
+                    your first payment is showing Pending. Wait for the payment status to update or
+                    contact our support team with your transaction/reference ID.
+                  </p>
+                </div>
+              </div>
+            </aside>
+
+            <article className="card-static p-5 sm:p-8">
+              <h2 className="text-xl font-semibold">📢 Important Notice – Enrollment Confirmation</h2>
 
               <h3 className="mt-8 text-base font-semibold text-primary">Confirm Your Participation:</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                To secure your place in the program, please complete the enrolment process by paying
-                the internship enrollment fee as specified in your Welcome Letter.
+                To secure your place in the program, please complete the enrolment process by{" "}
+                <strong className="font-semibold text-foreground">
+                  paying the internship enrollment fee as specified in your Welcome Letter.
+                </strong>
               </p>
 
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                After completion of your enrollment process, please share the required details as
-                mentioned and send your payment screenshot to our support team at{" "}
-                <a href={`mailto:${COMPANY.email}`} className="text-primary hover:underline">
-                  {COMPANY.email}
-                </a>{" "}
-                / or At WhatsApp (
-                <a href={COMPANY.whatsappHref} className="text-primary hover:underline">
-                  {COMPANY.whatsapp}
-                </a>
-                ). If You have any queries feel free to write us on{" "}
-                <a href={`mailto:${COMPANY.email}`} className="text-primary hover:underline">
-                  {COMPANY.email}
-                </a>
-                . Sending these details via Email and via WhatsApp both are mandatory.
+              <h3 className="mt-8 text-base font-semibold">After Payment</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                After completion of your enrollment process, please share the required details as mentioned
+                and send your payment screenshot to our support team at:
               </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <a href={`mailto:${PAYMENT_EMAIL}`} className="flex min-w-0 items-center gap-2.5 rounded-lg border border-border bg-surface p-3 text-sm hover:border-primary/40 hover:text-primary">
+                  <Mail className="size-4 shrink-0 text-primary" />
+                  <span className="min-w-0 break-all">{PAYMENT_EMAIL}</span>
+                </a>
+                <a href={PAYMENT_WHATSAPP_HREF} className="flex min-w-0 items-center gap-2.5 rounded-lg border border-border bg-surface p-3 text-sm hover:border-primary/40 hover:text-primary">
+                  <MessageCircle className="size-4 shrink-0 text-primary" />
+                  <span className="min-w-0 break-all">WhatsApp: {PAYMENT_WHATSAPP}</span>
+                </a>
+              </div>
+              <p className="mt-4 text-sm font-medium">Please send the required details only after completing the payment.</p>
 
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Once we receive your details, we will proceed with sending your confirmation email,
+                <strong className="text-foreground">Sending these details via WhatsApp is mandatory.</strong>
+                {" "}Once we receive your email, we will proceed with sending your confirmation email,
                 login credentials, and the WhatsApp number of your dedicated mentor.
               </p>
 
@@ -135,11 +237,12 @@ function Payment() {
                 ))}
               </ul>
 
-              <p className="mt-8 rounded-lg border border-primary/30 bg-primary/[0.07] p-5 text-sm leading-relaxed">
-                <span className="font-semibold">Note:</span> The confirmation email will be shared
-                within one hour, while the login credentials will be delivered by End of Day (Till
-                10:00 PM today).
-              </p>
+              <div className="mt-8 flex items-start gap-3 rounded-lg border border-primary/30 bg-primary/[0.07] p-5 text-sm leading-relaxed">
+                <Clock3 className="mt-0.5 size-5 shrink-0 text-primary" />
+                <p><span className="font-semibold">Note:</span> The confirmation email will be shared
+                  within one hour, while the login credentials will be delivered by End of Day (Till
+                  10:00 PM today).</p>
+              </div>
             </article>
           </div>
         </div>
