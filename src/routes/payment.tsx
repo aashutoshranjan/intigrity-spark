@@ -46,7 +46,7 @@ const detailsToShare = [
   "Batch Code (Mentioned in welcome letter)",
 ];
 
-const PAYMENT_AMOUNT = "₹1,599";
+const PAYMENT_AMOUNT = "As per Offer Letter";
 const UPI_ID = "paytm.s11ah8u@pta";
 const PAYMENT_EMAIL = "support@enerzcloud.com";
 const PAYMENT_WHATSAPP = "+917209493680";
@@ -89,8 +89,9 @@ function Payment() {
           <div className="lg:col-span-2">
             <div className="card-static overflow-hidden">
               <div className="border-b border-border bg-primary/[0.07] px-5 py-5 text-center sm:px-7">
-                <p className="text-xs font-semibold uppercase text-muted-foreground">Payment Amount</p>
-                <p className="mt-1 font-display text-3xl font-semibold text-primary">{PAYMENT_AMOUNT}</p>
+                <p className="text-xs font-semibold uppercase text-muted-foreground">Fixed Payment</p>
+                <p className="mt-1 font-display text-2xl font-semibold text-primary">{PAYMENT_AMOUNT}</p>
+                <p className="mt-1 text-xs text-muted-foreground">Exact amount: please check your Offer Letter</p>
               </div>
 
               <div className="m-4 rounded-lg border border-gold/40 bg-gold/10 p-4 text-left sm:m-6">
@@ -198,7 +199,7 @@ function Payment() {
               <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
                 To secure your place in the program, please complete the enrolment process by{" "}
                 <strong className="font-semibold text-foreground">
-                  paying the internship enrollment fee as specified in your Welcome Letter.
+                  paying the internship enrollment fee as specified in your Offer Letter.
                 </strong>
               </p>
 
